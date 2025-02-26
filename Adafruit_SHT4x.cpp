@@ -58,7 +58,7 @@ Adafruit_SHT4x::~Adafruit_SHT4x(void) {
  *
  * @return True if initialisation was successful, otherwise False.
  */
-bool Adafruit_SHT4x::begin(TwoWire *theWire, uint8_t address = SHT4x_DEFAULT_ADDR) {
+bool Adafruit_SHT4x::begin(TwoWire *theWire, uint8_t address) {
   if (i2c_dev) {
     delete i2c_dev; // remove old interface
   }
