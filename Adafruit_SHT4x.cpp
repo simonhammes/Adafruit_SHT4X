@@ -58,7 +58,7 @@ Adafruit_SHT4x::~Adafruit_SHT4x(void) {
  *
  * @return True if initialisation was successful, otherwise False.
  */
-bool Adafruit_SHT4x::begin(TwoWire *theWire) {
+bool Adafruit_SHT4x::begin(TwoWire *theWire, uint8_t address = SHT4x_DEFAULT_ADDR) {
   if (i2c_dev) {
     delete i2c_dev; // remove old interface
   }
@@ -69,7 +69,7 @@ bool Adafruit_SHT4x::begin(TwoWire *theWire) {
     delete humidity_sensor;
   }
 
-  i2c_dev = new Adafruit_I2CDevice(SHT4x_DEFAULT_ADDR, theWire);
+  i2c_dev = new Adafruit_I2CDevice(address, theWire);
 
   if (!i2c_dev->begin()) {
     return false;
