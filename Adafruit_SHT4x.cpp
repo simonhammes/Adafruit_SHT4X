@@ -55,6 +55,7 @@ Adafruit_SHT4x::~Adafruit_SHT4x(void) {
  * Initialises the I2C bus, and assigns the I2C address to us.
  *
  * @param theWire   The I2C bus to use, defaults to &Wire
+ * @param address   The address to use, defaults to SHT4x_DEFAULT_ADDR (= 0x44)
  *
  * @return True if initialisation was successful, otherwise False.
  */
